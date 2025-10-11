@@ -19,11 +19,21 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\asteroid.cpp" />
+    <ClCompile Include="src\bullet.cpp" />
     <ClCompile Include="src\gameplay.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ovni.cpp" />
+    <ClCompile Include="src\player.cpp" />
+    <ClCompile Include="src\ship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\asteroid.h" />
+    <ClInclude Include="src\bullet.h" />
     <ClInclude Include="src\gameplay.h" />
+    <ClInclude Include="src\ovni.h" />
+    <ClInclude Include="src\player.h" />
+    <ClInclude Include="src\ship.h" />
     <ClInclude Include="src\windowManagment.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

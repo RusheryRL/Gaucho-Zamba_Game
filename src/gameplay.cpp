@@ -3,6 +3,11 @@
 #include "raylib.h"
 
 #include "windowManagment.h"
+#include "player.h"
+#include "ovni.h"
+#include "asteroid.h"
+#include "ship.h"
+#include "bullet.h"
 
 namespace gauchoZambaGame
 {
@@ -10,6 +15,12 @@ namespace gauchoZambaGame
     {
         InitWindow(screenWidth, screenHeight, "Gaucho Zamba");
         //Inits
+        Player player = initPlayer();
+        Ship ship = initShip(player.x, player.y, player.r, player.speedX, player.speedY, player.isAlive);
+        Ovni ovni = initOvni();
+        Asteroid asteroid = initAsteroid();
+        Bullet Playerbullet = initBullet();
+        Bullet Ovnibullet = initBullet();
 
         while (!WindowShouldClose())
         {

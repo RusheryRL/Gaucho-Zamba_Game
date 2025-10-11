@@ -19,6 +19,12 @@
     <Filter Include="Header Files\Game">
       <UniqueIdentifier>{1fd43df0-b65c-4096-a91c-ba6bf38d5205}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{7fcf4398-eadf-42a7-a222-4710ef932513}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Utilities">
+      <UniqueIdentifier>{a01efbe1-0913-4d24-b20f-a14fb34e168f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\gameplay.cpp">
@@ -27,6 +33,21 @@
     <ClCompile Include="src\main.cpp">
       <Filter>Resource Files\Game</Filter>
     </ClCompile>
+    <ClCompile Include="src\ovni.cpp">
+      <Filter>Resource Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\asteroid.cpp">
+      <Filter>Resource Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\bullet.cpp">
+      <Filter>Resource Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player.cpp">
+      <Filter>Resource Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ship.cpp">
+      <Filter>Resource Files\Utilities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\gameplay.h">
@@ -34,6 +55,21 @@
     </ClInclude>
     <ClInclude Include="src\windowManagment.h">
       <Filter>Header Files\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\asteroid.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\bullet.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ship.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ovni.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
