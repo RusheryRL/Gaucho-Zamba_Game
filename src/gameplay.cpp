@@ -24,8 +24,14 @@ namespace gauchoZambaGame
 
         while (!WindowShouldClose())
         {
+            //Update
+            playerMovment(player);
+            playerScreenCollision(player);
+
             //start Draw
             BeginDrawing();
+
+            DrawCircleLines(player.x, player.y, player.r, WHITE);
 
             ClearBackground(BLACK);
 

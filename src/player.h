@@ -20,8 +20,10 @@ namespace gauchoZambaGame
 
 	const int MAX_PLAYER_POINTS = 5;
 
-	const float PLAYER_RADIUS = 10.0f;
+	const float PLAYER_RADIUS = 15.0f;
 	const float PLAYER_SPEED = 150.0f;
 
 	Player initPlayer();
+	void playerMovment(Player& player);
+	void playerScreenCollision(Player& player);
 }

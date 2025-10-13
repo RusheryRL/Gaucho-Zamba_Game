@@ -19,7 +19,7 @@ namespace gauchoZambaGame
 	const int ASTEROID_CHILDRENS = 2;
 	const int MAX_ASTROID_SIZE = 30;
 	
-	const char* ASTEROID_TEXTURE = " ";
+	//const char* ASTEROID_TEXTURE = " ";
 
 	const float ASTEROID_SPEED = 50.0f;
 

@@ -1,5 +1,7 @@
 #include "player.h"
 
+#include "raylib.h"
+
 #include "windowManagment.h"
 
 namespace gauchoZambaGame
@@ -20,5 +22,28 @@ namespace gauchoZambaGame
 		player.points = 0;
 
 		return player;
+	}
+
+	void playerMovment(Player& player)
+	{
+		if (IsKeyDown(KEY_W))
+			player.y -= PLAYER_SPEED * GetFrameTime();
+		else if (IsKeyDown(KEY_S))
+			player.y += PLAYER_SPEED * GetFrameTime();
+		else if (IsKeyDown(KEY_A))
+			player.x -= PLAYER_SPEED * GetFrameTime();
+		else if (IsKeyDown(KEY_D))
+			player.x += PLAYER_SPEED * GetFrameTime();
+	}
+	void playerScreenCollision(Player& player)
+	{
+		if (player.y - PLAYER_RADIUS <= 0)
+			player.y = PLAYER_RADIUS;
+		else if (player.y >= (GetScreenHeight() - PLAYER_RADIUS))
+			player.y = (GetScreenHeight() - PLAYER_RADIUS);
+		else if (player.x - PLAYER_RADIUS <= 0)
+			player.x = PLAYER_RADIUS;
+		else if (player.x >= (GetScreenWidth() - PLAYER_RADIUS))
+			player.x = (GetScreenWidth() - PLAYER_RADIUS);
 	}
 }

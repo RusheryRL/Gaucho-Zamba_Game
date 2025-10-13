@@ -12,7 +12,7 @@ namespace gauchoZambaGame
 		bool ispPlayerDead;
 	};
 
-	const char* SHIP_TEXTURE = " ";
+	//const char* SHIP_TEXTURE = " ";
 
 	Ship initShip(float x, float y, float r, float speedX, float speedY, bool isPlayerDead);
 }
