@@ -19,8 +19,8 @@ namespace gauchoZambaGame
         Ship ship = initShip(player.x, player.y, player.r, player.speedX, player.speedY, player.isAlive);
         Ovni ovni = initOvni();
         Asteroid asteroid = initAsteroid();
-        Bullet Playerbullet = initBullet();
-        Bullet Ovnibullet = initBullet();
+        Bullet Playerbullet = initBullet(player.x, player.y);
+        Bullet Ovnibullet = initBullet(ovni.x, ovni.y);
 
         while (!WindowShouldClose())
         {

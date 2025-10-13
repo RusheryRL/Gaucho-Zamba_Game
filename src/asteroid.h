@@ -15,10 +15,13 @@ namespace gauchoZambaGame
 		int points;
 	};
 
-	const int POINTS_PER_ASTEROID = 100;
+	const int POINTS_PER_ASTEROID = 50;
 	const int ASTEROID_CHILDRENS = 2;
+	const int MAX_ASTROID_SIZE = 30;
 	
 	const char* ASTEROID_TEXTURE = " ";
+
+	const float ASTEROID_SPEED = 50.0f;
 
 	Asteroid initAsteroid();
 }

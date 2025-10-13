@@ -9,10 +9,10 @@ namespace gauchoZambaGame
 		float r;
 		float speedX;
 		float speedY;
-		bool playerIsDead;
+		bool ispPlayerDead;
 	};
 
 	const char* SHIP_TEXTURE = " ";
 
-	Ship initShip(float x, float y, float r, float speedX, float speedY, bool playerIsDead);
+	Ship initShip(float x, float y, float r, float speedX, float speedY, bool isPlayerDead);
 }
