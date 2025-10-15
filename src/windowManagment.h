@@ -2,6 +2,6 @@
 
 namespace gauchoZambaGame
 {
-	const int screenWidth = 1280;
-	const int screenHeight = 720;
+	const int screenWidth = 1024;
+	const int screenHeight = 761;
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "mouse.h"
+
 namespace gauchoZambaGame
 {
 	struct Player
@@ -9,6 +11,7 @@ namespace gauchoZambaGame
 		float r;
 		float speedX;
 		float speedY;
+		float acc;
 
 		bool isAlive;
 		bool isShooting;
@@ -22,8 +25,10 @@ namespace gauchoZambaGame
 
 	const float PLAYER_RADIUS = 15.0f;
 	const float PLAYER_SPEED = 150.0f;
+	const float PLAYER_ACCELERARTION = 5.0f;
 
 	Player initPlayer();
 	void playerMovment(Player& player);
 	void playerScreenCollision(Player& player);
+	void playerInput(Player& player);
 }

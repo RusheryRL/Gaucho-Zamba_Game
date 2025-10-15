@@ -8,6 +8,7 @@
 #include "asteroid.h"
 #include "ship.h"
 #include "bullet.h"
+#include "mouse.h"
 
 namespace gauchoZambaGame
 {
@@ -15,6 +16,7 @@ namespace gauchoZambaGame
     {
         InitWindow(screenWidth, screenHeight, "Gaucho Zamba");
         //Inits
+        Mouse mouse = initMouse();
         Player player = initPlayer();
         Ship ship = initShip(player.x, player.y, player.r, player.speedX, player.speedY, player.isAlive);
         Ovni ovni = initOvni();
@@ -25,6 +27,7 @@ namespace gauchoZambaGame
         while (!WindowShouldClose())
         {
             //Update
+            playerInput(player);
             playerMovment(player);
             playerScreenCollision(player);
 
