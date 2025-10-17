@@ -19,22 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\asteroid.cpp" />
-    <ClCompile Include="src\bullet.cpp" />
-    <ClCompile Include="src\gameplay.cpp" />
+    <ClCompile Include="src\game\gameplay.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\ovni.cpp" />
-    <ClCompile Include="src\player.cpp" />
-    <ClCompile Include="src\ship.cpp" />
+    <ClCompile Include="src\objects\asteroid.cpp" />
+    <ClCompile Include="src\objects\bullet.cpp" />
+    <ClCompile Include="src\objects\ovni.cpp" />
+    <ClCompile Include="src\objects\player.cpp" />
+    <ClCompile Include="src\objects\ship.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\asteroid.h" />
-    <ClInclude Include="src\bullet.h" />
-    <ClInclude Include="src\gameplay.h" />
-    <ClInclude Include="src\ovni.h" />
-    <ClInclude Include="src\player.h" />
-    <ClInclude Include="src\ship.h" />
-    <ClInclude Include="src\windowManagment.h" />
+    <ClInclude Include="src\game\gameplay.h" />
+    <ClInclude Include="src\game\windowManagment.h" />
+    <ClInclude Include="src\objects\asteroid.h" />
+    <ClInclude Include="src\objects\bullet.h" />
+    <ClInclude Include="src\objects\ovni.h" />
+    <ClInclude Include="src\objects\player.h" />
+    <ClInclude Include="src\objects\ship.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
@@ -128,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\lib\raylib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\lib\raylib;$(ProjectDir)\src</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -150,7 +150,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\lib\raylib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\lib\raylib;$(ProjectDir)\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

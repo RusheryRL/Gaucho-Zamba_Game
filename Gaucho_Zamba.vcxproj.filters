@@ -27,49 +27,49 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\gameplay.cpp">
-      <Filter>Resource Files\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ovni.cpp">
-      <Filter>Resource Files\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\asteroid.cpp">
-      <Filter>Resource Files\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\bullet.cpp">
-      <Filter>Resource Files\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\player.cpp">
-      <Filter>Resource Files\Objects</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ship.cpp">
-      <Filter>Resource Files\Objects</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\objects\asteroid.cpp">
+      <Filter>Resource Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\objects\bullet.cpp">
+      <Filter>Resource Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\objects\ovni.cpp">
+      <Filter>Resource Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\objects\player.cpp">
+      <Filter>Resource Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\objects\ship.cpp">
+      <Filter>Resource Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\gameplay.cpp">
+      <Filter>Resource Files\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\gameplay.h">
+    <ClInclude Include="src\objects\asteroid.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\bullet.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\ovni.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\player.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\objects\ship.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\gameplay.h">
       <Filter>Header Files\Game</Filter>
     </ClInclude>
-    <ClInclude Include="src\windowManagment.h">
+    <ClInclude Include="src\game\windowManagment.h">
       <Filter>Header Files\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="src\asteroid.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\bullet.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\player.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ship.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ovni.h">
-      <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
