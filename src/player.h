@@ -1,7 +1,5 @@
 #pragma once
 
-#include "mouse.h"
-
 namespace gauchoZambaGame
 {
 	struct Player

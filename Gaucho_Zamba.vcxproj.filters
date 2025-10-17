@@ -45,9 +45,6 @@
     <ClCompile Include="src\ship.cpp">
       <Filter>Resource Files\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="src\mouse.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\main.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
@@ -72,9 +69,6 @@
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\ovni.h">
-      <Filter>Header Files\Objects</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mouse.h">
       <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>

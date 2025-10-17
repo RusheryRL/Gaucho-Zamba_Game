@@ -23,7 +23,6 @@
     <ClCompile Include="src\bullet.cpp" />
     <ClCompile Include="src\gameplay.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\mouse.cpp" />
     <ClCompile Include="src\ovni.cpp" />
     <ClCompile Include="src\player.cpp" />
     <ClCompile Include="src\ship.cpp" />
@@ -32,7 +31,6 @@
     <ClInclude Include="src\asteroid.h" />
     <ClInclude Include="src\bullet.h" />
     <ClInclude Include="src\gameplay.h" />
-    <ClInclude Include="src\mouse.h" />
     <ClInclude Include="src\ovni.h" />
     <ClInclude Include="src\player.h" />
     <ClInclude Include="src\ship.h" />
