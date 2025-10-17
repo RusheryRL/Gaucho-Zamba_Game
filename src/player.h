@@ -1,5 +1,7 @@
 #pragma once
 
+#include "raylib.h" 
+
 namespace gauchoZambaGame
 {
 	struct Player
@@ -9,7 +11,8 @@ namespace gauchoZambaGame
 		float r;
 		float speedX;
 		float speedY;
-		float acc;
+		float accX;
+		float accY;
 
 		bool isAlive;
 		bool isShooting;
@@ -26,8 +29,9 @@ namespace gauchoZambaGame
 	const float PLAYER_ACCELERARTION = 15.0f;
 
 	Player initPlayer();
-	void playerMovment(Player& player);
+	Vector2 playerMovment(Player& player);
 	void playerScreenCollision(Player& player);
 	void playerInput(Player& player);
 	void playerClamp(Player& player);
+	Vector2 normalize(float& dirX, float& dirY);
 }

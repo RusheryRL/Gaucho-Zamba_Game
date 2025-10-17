@@ -19,7 +19,8 @@ namespace gauchoZambaGame
 		player.r = PLAYER_RADIUS;
 		player.speedX = 0.0f;
 		player.speedY = 0.0f;
-		player.acc = PLAYER_ACCELERARTION;
+		player.accX = PLAYER_ACCELERARTION;
+		player.accY = PLAYER_ACCELERARTION;
 		player.isAlive = true;
 		player.isShooting = false;
 		player.isWinner = false;
@@ -29,29 +30,32 @@ namespace gauchoZambaGame
 		return player;
 	}
 
-	void playerMovment(Player& player)
+	Vector2 playerMovment(Player& player)
 	{
+		float dirX = player.x;
+		float dirY = player.y;
 
-		if (GetMousePosition().x <= player.x && GetMousePosition().y <= player.y)
+		Vector2 dirNormalize = normalize(dirX, dirY);
+
+		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
-			player.x -= player.speedX * GetFrameTime();
-			player.y -= player.speedY * GetFrameTime();
+			dirX = GetMouseX() - player.x;
+			dirY = GetMouseY() - player.y;
+
+
+			dirNormalize = normalize(dirX, dirY);
+
+			player.accX += dirNormalize.x;
+			player.accY += dirNormalize.y;
+
 		}
-		else if (GetMousePosition().x >= player.x && GetMousePosition().y <= player.y)
-		{
-			player.x += player.speedX * GetFrameTime();
-			player.y -= player.speedY * GetFrameTime();
-		}
-		else if (GetMousePosition().x <= player.x && GetMousePosition().y >= player.y)
-		{
-			player.x -= player.speedX * GetFrameTime();
-			player.y += player.speedY * GetFrameTime();
-		}
-		else if (GetMousePosition().x >= player.x && GetMousePosition().y >= player.y)
-		{
-			player.x += player.speedX * GetFrameTime();
-			player.y += player.speedY * GetFrameTime();
-		}
+
+
+		player.x += player.accX * GetFrameTime() * 0.1f;
+		player.y += player.accY * GetFrameTime() * 0.1f;
+
+		return dirNormalize;
+
 	}
 	void playerScreenCollision(Player& player)
 	{
@@ -66,16 +70,11 @@ namespace gauchoZambaGame
 	}
 	void playerInput(Player& player)
 	{
-		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
+		/*if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
-			player.speedY += player.acc * GetFrameTime();
-			player.speedX += player.acc * GetFrameTime();
-		}
-		else if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT) && player.speedY >= 0.0f)
-		{
-			player.speedY -= player.acc * GetFrameTime();
-			player.speedX -= player.acc * GetFrameTime();
-		}
+			player.speedY += player.accY * GetFrameTime();
+			player.speedX += player.accX * GetFrameTime();
+		}*/
 
 		playerClamp(player);
 	}
@@ -90,9 +89,15 @@ namespace gauchoZambaGame
 		{
 			player.speedY = -MAX_PLAYER_SPEED;
 		}
-		else if (player.speedY < 1.0f && player.speedY > 1.0f)
-		{
-			player.speedY = 0.0f;
-		}
+	}
+
+	Vector2 normalize(float& dirX, float& dirY)
+	{
+		float lenght = static_cast<float>(sqrt((pow(dirX, 2) + pow(dirY, 2))));
+
+		dirX /= lenght;
+		dirY /= lenght;
+
+		return { dirX, dirY };
 	}
 }

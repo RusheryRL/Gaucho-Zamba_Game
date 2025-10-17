@@ -2,7 +2,9 @@
 
 using namespace gauchoZambaGame;
 
-void main()
+int main()
 {
 	GameRun();
+
+	return 0;
 }
