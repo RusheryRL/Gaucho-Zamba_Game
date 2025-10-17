@@ -1,6 +1,7 @@
 #include "player.h"
 
 #include <iostream>
+#include <cmath>
 
 #include "raylib.h"
 
@@ -16,7 +17,7 @@ namespace gauchoZambaGame
 		player.x = screenWidth / 2;
 		player.y = screenHeight / 2;
 		player.r = PLAYER_RADIUS;
-		player.speedX = PLAYER_SPEED;
+		player.speedX = 0.0f;
 		player.speedY = 0.0f;
 		player.acc = PLAYER_ACCELERARTION;
 		player.isAlive = true;
@@ -30,20 +31,27 @@ namespace gauchoZambaGame
 
 	void playerMovment(Player& player)
 	{
-		player.y -= player.speedY * GetFrameTime();
 
-		/*else if (IsKeyDown(KEY_S))
+		if (GetMousePosition().x <= player.x && GetMousePosition().y <= player.y)
 		{
-			player.y += PLAYER_SPEED * GetFrameTime();
+			player.x -= player.speedX * GetFrameTime();
+			player.y -= player.speedY * GetFrameTime();
 		}
-		else if (IsKeyDown(KEY_A))
+		else if (GetMousePosition().x >= player.x && GetMousePosition().y <= player.y)
 		{
-			player.x -= PLAYER_SPEED * GetFrameTime();
+			player.x += player.speedX * GetFrameTime();
+			player.y -= player.speedY * GetFrameTime();
 		}
-		else if (IsKeyDown(KEY_D))
+		else if (GetMousePosition().x <= player.x && GetMousePosition().y >= player.y)
 		{
-			player.x += PLAYER_SPEED * GetFrameTime();
-		}*/
+			player.x -= player.speedX * GetFrameTime();
+			player.y += player.speedY * GetFrameTime();
+		}
+		else if (GetMousePosition().x >= player.x && GetMousePosition().y >= player.y)
+		{
+			player.x += player.speedX * GetFrameTime();
+			player.y += player.speedY * GetFrameTime();
+		}
 	}
 	void playerScreenCollision(Player& player)
 	{
@@ -58,18 +66,33 @@ namespace gauchoZambaGame
 	}
 	void playerInput(Player& player)
 	{
-		if (IsKeyDown(KEY_W))
+		if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
 			player.speedY += player.acc * GetFrameTime();
-
-			cout << player.speedY << endl;
+			player.speedX += player.acc * GetFrameTime();
 		}
-
-		if (IsKeyUp(KEY_W) && player.speedY >= 0.0f)
+		else if (IsMouseButtonUp(MOUSE_BUTTON_RIGHT) && player.speedY >= 0.0f)
 		{
 			player.speedY -= player.acc * GetFrameTime();
+			player.speedX -= player.acc * GetFrameTime();
+		}
 
-			cout << player.speedY << endl;
+		playerClamp(player);
+	}
+
+	void playerClamp(Player& player)
+	{
+		if (player.speedY >= MAX_PLAYER_SPEED)
+		{
+			player.speedY = MAX_PLAYER_SPEED;
+		}
+		else if (player.speedY <= -MAX_PLAYER_SPEED)
+		{
+			player.speedY = -MAX_PLAYER_SPEED;
+		}
+		else if (player.speedY < 1.0f && player.speedY > 1.0f)
+		{
+			player.speedY = 0.0f;
 		}
 	}
 }

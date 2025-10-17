@@ -19,10 +19,10 @@
     <Filter Include="Header Files\Game">
       <UniqueIdentifier>{1fd43df0-b65c-4096-a91c-ba6bf38d5205}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Utilities">
+    <Filter Include="Header Files\Objects">
       <UniqueIdentifier>{7fcf4398-eadf-42a7-a222-4710ef932513}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files\Utilities">
+    <Filter Include="Resource Files\Objects">
       <UniqueIdentifier>{a01efbe1-0913-4d24-b20f-a14fb34e168f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -30,26 +30,26 @@
     <ClCompile Include="src\gameplay.cpp">
       <Filter>Resource Files\Game</Filter>
     </ClCompile>
-    <ClCompile Include="src\main.cpp">
-      <Filter>Resource Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="src\ovni.cpp">
-      <Filter>Resource Files\Utilities</Filter>
+      <Filter>Resource Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\asteroid.cpp">
-      <Filter>Resource Files\Utilities</Filter>
+      <Filter>Resource Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\bullet.cpp">
-      <Filter>Resource Files\Utilities</Filter>
+      <Filter>Resource Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\player.cpp">
-      <Filter>Resource Files\Utilities</Filter>
+      <Filter>Resource Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\ship.cpp">
-      <Filter>Resource Files\Utilities</Filter>
+      <Filter>Resource Files\Objects</Filter>
     </ClCompile>
     <ClCompile Include="src\mouse.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,22 +60,22 @@
       <Filter>Header Files\Game</Filter>
     </ClInclude>
     <ClInclude Include="src\asteroid.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\bullet.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\player.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\ship.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\ovni.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\mouse.h">
-      <Filter>Header Files\Utilities</Filter>
+      <Filter>Header Files\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
