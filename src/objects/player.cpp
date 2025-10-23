@@ -100,4 +100,11 @@ namespace gauchoZambaGame
 
 		return { dirX, dirY };
 	}
+	void playerShoot()
+	{
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
+		{
+
+		}
+	}
 }

@@ -2,6 +2,8 @@
 
 #include "raylib.h" 
 
+#include "bullet.h"
+
 namespace gauchoZambaGame
 {
 	struct Player
@@ -34,4 +36,5 @@ namespace gauchoZambaGame
 	void playerInput(Player& player);
 	void playerClamp(Player& player);
 	Vector2 normalize(float& dirX, float& dirY);
+	void playerShoot();
 }
