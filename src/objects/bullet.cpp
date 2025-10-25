@@ -1,5 +1,6 @@
 #include "bullet.h"
 
+#include "player.h"
 #include "game/windowManagment.h"
 
 namespace gauchoZambaGame
@@ -16,5 +17,17 @@ namespace gauchoZambaGame
 		bullet.spawnBullet = false;
 
 		return bullet;
+	}
+	void bulletMovement(Bullet& bullet)
+	{
+		if (bullet.spawnBullet)
+		{
+			bullet.x += bullet.speedX * GetFrameTime();
+			bullet.y += bullet.speedY * GetFrameTime();
+
+			if (bullet.x <= 0 || bullet.x >= screenWidth ||
+				bullet.y <= 0 || bullet.y >= screenHeight)
+				bullet.spawnBullet = false;
+		}
 	}
 }

@@ -26,6 +26,8 @@ namespace gauchoZambaGame
 		player.isWinner = false;
 		player.currentPlayerLives = MAX_PLAYER_POINTS;
 		player.points = 0;
+		player.shots = 0;
+		player.fireTimer = 0.0f;
 
 		return player;
 	}
@@ -68,7 +70,7 @@ namespace gauchoZambaGame
 		else if (player.x >= (GetScreenWidth() + PLAYER_RADIUS))
 			player.x = PLAYER_RADIUS;
 	}
-	void playerInput(Player& player)
+	void playerInput(Player& player) //preguntar
 	{
 		/*if (IsMouseButtonDown(MOUSE_BUTTON_RIGHT))
 		{
@@ -81,13 +83,22 @@ namespace gauchoZambaGame
 
 	void playerClamp(Player& player)
 	{
-		if (player.speedY >= MAX_PLAYER_SPEED)
+		if (player.accY >= MAX_PLAYER_SPEED)
 		{
-			player.speedY = MAX_PLAYER_SPEED;
+			player.accY = MAX_PLAYER_SPEED;
 		}
-		else if (player.speedY <= -MAX_PLAYER_SPEED)
+		else if (player.accY <= -MAX_PLAYER_SPEED)
 		{
-			player.speedY = -MAX_PLAYER_SPEED;
+			player.accY = -MAX_PLAYER_SPEED;
+		}
+
+		if (player.accX >= MAX_PLAYER_SPEED)
+		{
+			player.accX = MAX_PLAYER_SPEED;
+		}
+		else if (player.accX <= -MAX_PLAYER_SPEED)
+		{
+			player.accX = -MAX_PLAYER_SPEED;
 		}
 	}
 
@@ -100,11 +111,31 @@ namespace gauchoZambaGame
 
 		return { dirX, dirY };
 	}
-	void playerShoot()
+	void playerShoot(Player& player, Bullet& bullet)
 	{
-		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT))
-		{
+		static float lastFireTime = 0.0f;
 
+		lastFireTime -= GetFrameTime();
+		if (lastFireTime <= 0.0f)
+			lastFireTime = 0.0f;
+
+		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT) && lastFireTime <= 0.0f, bullet.spawnBullet == false)
+		{
+			bullet.spawnBullet = true;
+			bullet.x = player.x;
+			bullet.y = player.y;
+
+			float bulletDirX = GetMouseX() - player.x;
+			float bulletDirY = GetMouseY() - player.y;
+
+			Vector2 bulletDirNormalize = normalize(bulletDirX, bulletDirY);
+
+			bullet.speedX = bulletDirNormalize.x * BULLET_SPEED;
+			bullet.speedY = bulletDirNormalize.y * BULLET_SPEED;
+
+			lastFireTime = BULLET_FIRE_RATE;
 		}
+
+		bulletMovement(bullet);
 	}
 }

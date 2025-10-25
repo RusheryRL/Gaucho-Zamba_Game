@@ -18,9 +18,10 @@ namespace gauchoZambaGame
 	//const char* PLAYER_BULLET_TEXTURE = " ";
 	//const char* OVNI_BULLET_TEXTURE = " ";
 
-	const float BULLET_RADIUS = 3.0f;
+	const float BULLET_RADIUS = 5.0f;
 	const float BULLET_SPEED = 100.0f;
 	const float BULLET_FIRE_RATE = 0.1f;
 
 	Bullet initBullet(float x, float y);
+	void bulletMovement(Bullet& bullet);
 }
